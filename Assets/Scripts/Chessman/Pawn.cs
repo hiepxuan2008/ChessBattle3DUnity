@@ -1,7 +1,66 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Pawn : Chessman {
+    public override string Annotation()
+    {
+        return "P";
+    }
+
+    public override bool[,] PossibleEat()
+    {
+        bool[,] moves = new bool[8, 8];
+        Chessman c1;
+
+        // white team moves
+        if (isWhite)
+        {
+            // Diagonal left
+            if (CurrentX != 0 && CurrentY != 7)
+            {
+                c1 = BoardManager.Instance.Chessmans[CurrentX - 1, CurrentY + 1];
+                if (c1 == null)
+                {
+                    moves[CurrentX - 1, CurrentY + 1] = true;
+                }
+            }
+
+            // Diagonal right
+            if (CurrentX != 7 && CurrentY != 7)
+            {
+                c1 = BoardManager.Instance.Chessmans[CurrentX + 1, CurrentY + 1];
+                if (c1 == null)
+                {
+                    moves[CurrentX + 1, CurrentY + 1] = true;
+                }
+            }
+        }
+        else
+        {
+            // Diagonal left
+            if (CurrentX != 0 && CurrentY != 0)
+            {
+                c1 = BoardManager.Instance.Chessmans[CurrentX - 1, CurrentY - 1];
+                if (c1 == null)
+                {
+                    moves[CurrentX - 1, CurrentY - 1] = true;
+                }
+            }
+
+            // Diagonal right
+            if (CurrentX != 7 && CurrentY != 0)
+            {
+                c1 = BoardManager.Instance.Chessmans[CurrentX + 1, CurrentY - 1];
+                if (c1 == null)
+                {
+                    moves[CurrentX + 1, CurrentY - 1] = true;
+                }
+            }
+        }
+
+        return moves;
+    }
 
     public override bool[,] PossibleMove()
     {

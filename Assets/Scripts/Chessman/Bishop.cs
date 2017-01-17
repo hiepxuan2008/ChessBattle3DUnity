@@ -3,6 +3,15 @@ using System.Collections;
 using System;
 
 public class Bishop : Chessman {
+    public override string Annotation()
+    {
+        return "B";
+    }
+
+    public override bool[,] PossibleEat()
+    {
+        return PossibleMove();
+    }
 
     public override bool[,] PossibleMove()
     {

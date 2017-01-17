@@ -1,7 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Knight : Chessman {
+    public override string Annotation()
+    {
+        return "N";
+    }
+
+    public override bool[,] PossibleEat()
+    {
+        return PossibleMove();
+    }
+
     public override bool[,] PossibleMove()
     {
         bool[,] moves = new bool[8, 8];

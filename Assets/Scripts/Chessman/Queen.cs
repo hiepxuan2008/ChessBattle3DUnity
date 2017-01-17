@@ -1,7 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Queen : Chessman {
+    public override string Annotation()
+    {
+        return "Q";
+    }
+
+    public override bool[,] PossibleEat()
+    {
+        return PossibleMove();
+    }
 
     public override bool[,] PossibleMove()
     {

@@ -1,7 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Rook : Chessman {
+    public override string Annotation()
+    {
+        return "R";
+    }
+
+    public override bool[,] PossibleEat()
+    {
+        return PossibleMove();
+    }
 
     public override bool[,] PossibleMove()
     {

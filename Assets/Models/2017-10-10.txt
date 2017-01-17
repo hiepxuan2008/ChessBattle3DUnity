@@ -1,0 +1,6 @@
+Chessmans: King, Queen, Bishop, Knight, Rook, Pawn
+Black: Captain, Scalet Witch, Vision, Iron Man, Thor, Hulk
+White: Superman, Wonder Woman, Batman, Green Lantern, The Flash, Aquaman
+
+Avengers: Hulk, Iron man, Captain, Black Window, Scalet witch, Vision, Thor
+Justice League: Superman, Batman, The Flash, Green Lantern, Aquaman, Wonder Woman
